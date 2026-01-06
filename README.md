@@ -20,7 +20,9 @@ Clicking [Order] creates a new order in the database
 How to Run:
 Open the solution in Visual Studio 2022.
 Restore NuGet packages.
-Update the connection string to your database (if needed).
+Apply migrations:
+Add-Migration InitialCreate
+Update-Database
 Press F5 or click Run to start the project with IIS Express.
 
 Tech:
