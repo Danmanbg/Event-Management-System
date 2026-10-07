@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Event>
+
+<h2>My Events</h2>
+
+<ul class="list-group">
+    @foreach (var e in Model)
+    {
+        <li class="list-group-item">
+            @e.Title - @e.EventDate
+        </li>
+    }
+</ul>

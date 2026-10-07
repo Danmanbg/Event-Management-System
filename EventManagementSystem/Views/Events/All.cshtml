@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Event>
+
+<h2>All Events</h2>
+
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Tickets</th>
+        <th></th>
+    </tr>
+
+    @foreach (var e in Model)
+    {
+        <tr>
+            <td>@e.Title</td>
+            <td>@e.EventDate</td>
+            <td>@e.AvailableTickets</td>
+            <td>
+                <form asp-action="Order" method="post">
+                    <input type="hidden" name="eventId" value="@e.Id" />
+                    <input type="number" name="tickets" value="1" min="1" />
+                    <button class="btn btn-primary">Order</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>

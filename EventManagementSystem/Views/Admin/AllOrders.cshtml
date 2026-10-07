@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Order>
+
+<h2>All Orders</h2>
+
+<table class="table">
+    <tr>
+        <th>User</th>
+        <th>Event</th>
+        <th>Tickets</th>
+        <th>Date</th>
+    </tr>
+
+    @foreach (var o in Model)
+    {
+        <tr>
+            <td>@o.Customer.UserName</td>
+            <td>@o.Event.Title</td>
+            <td>@o.TicketsCount</td>
+            <td>@o.OrderedOn</td>
+        </tr>
+    }
+</table>

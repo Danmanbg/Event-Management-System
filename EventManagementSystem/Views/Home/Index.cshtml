@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <h2>Welcome to Event Management System</h2>
+    <p>Please login or register.</p>
+}
+else
+{
+    <h2>Welcome, @User.Identity.Name!</h2>
+    <p>Browse events and order tickets.</p>
+}
